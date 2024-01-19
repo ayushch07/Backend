@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div  class="hero">
+        <div class="card">
+            <h1>Upload Image</h1>
+            <img src="./1.jpeg" alt="" id="profile">
+            <label for="input-file">Update Image</label>
+            <input type="file" id="input-file" accept="image/jpeg,image/png,image/jpg">
+
+
+        </div>
+     </div>
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .hero{
+                  display: flex;
+                  width: 100%;
+                  height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        .card{
+            border: 2px solid salmon;
+            padding: 40px;
+            width: 400px;
+            background:#fff;
+            border-radius: 15px;
+            text-align: center;
+            color: #333;
+        }
+        #profile{
+            border-radius: 50%;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            height: 180px;
+            width: 180px;   
+        }
+        label{
+            display: block;
+            width: 200px;
+            padding: 12px;
+            margin: 12px auto;
+            color: red;
+            background:rgba(45, 41, 41, 0.141);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        #input-file{
+            display: none;
+        }
+        
+     </style>
+     <script>
+        let profile=document.getElementById("profile");
+        let input=document.getElementById("input-file");
+        // input.onchange=function(){
+        //     profile.src=URL.createObjectURL(input.files[0]);
+        //     console.log(profile.src);
+        // }
+        input.addEventListener("change",function(){
+                // //    console.log(input.files);
+                // profile.src=URL.createObjectURL(input.files[0]); ese bhi kar sake to neeche waal tarika bhi sahi hai
+                profile.setAttribute('src',URL.createObjectURL(input.files[0]));
+        });
+     </script>
+      
+    
+</body>
+</html>

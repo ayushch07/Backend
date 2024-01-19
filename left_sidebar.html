@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+         <div class="container">
+        <img src="./nav.jpg" alt="" id="image">
+        <h1>Geeks Help</h1>
+    </div>
+    
+      <div class="nav" id="po">
+         <ul>
+            <li>
+                one
+            </li>
+            <li>
+                one
+            </li>
+            <li>
+                one
+            </li>
+            <li>
+                one
+            </li>
+            <li>
+                one
+            </li>
+         </ul>
+      </h1>
+        
+      
+  
+    <style>
+        img{
+            width: 60px;
+           cursor: pointer;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            background-color: #00ffff;
+            border: 2px solid black;
+            
+        }
+        h1{
+            margin-right: 40%;
+        }
+        .nav
+        {
+            position: relative;
+            left:-120px;
+            transition: left 0.5s ease-out;
+        }
+        ul li{
+            margin: 22px;
+           
+            width: max-content;
+        }
+        .nv{
+            position: relative;
+            left:5px;
+            transition: left 0.5s ease-out;
+        }
+      
+       
+        
+    </style>
+    <script>
+             let image=document.getElementById('image');
+           let h1=document.getElementById('po');
+             let arr=['./cross.jpg','./nav.jpg'];
+             let f=false;
+             image.addEventListener('click',()=>{
+                    if(!f){
+                  image.setAttribute('src',arr[0]);
+                 image.setAttribute('style', 'width: 30px;');
+                 image.style.margin='12px';
+               h1.classList.remove("nav");
+                 h1.classList.add("nv");
+                }
+                   else{
+                   image.setAttribute('src',arr[1]);
+                   image.setAttribute('style', 'width: 60px;');   
+                   h1.classList.remove("nv");
+                   h1.classList.add("nav");
+                  
+                }
+                 f=!f;
+             })
+    </script>
+</body>
+</html>

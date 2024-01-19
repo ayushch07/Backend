@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class and object</h1>
+    <script>
+        class person{
+            constructor(n,a)
+            {
+                this.name=n;
+                this.age=a;
+            }
+              sayhello()//a funciton or method
+              {
+                console.log("Hello");
+              }
+              static sayHi()
+              {
+                console.log("SayHi...");
+              }
+        }
+        let person1=new person();
+
+
+        person1.sayhello();
+        
+        let person2=new person("Yash",20);
+        console.log(person2);
+       console.log(person.sayHi());
+       //static sayHi ko direct class se hi call karenge naki object se call karenge object hai person1 and person2
+       class emp{
+        constructor(n){
+            console.log("emp constructor called...");
+            this.name=n;
+        }
+       }
+       class mng extends emp{
+        constructor(p,d)
+       { super(p);//ye apne parent ki property ko call karne ke lie kaam aata hai.
+        this.department=d;
+       }
+
+       }
+       let mng1=new mng();
+       console.log(mng1);
+       
+       let mng2=new mng("Manager");
+       console.log(mng2.name);
+       
+       let mng3=new mng("Manager","WebD");
+       console.log(mng3);//agar bina super ko use kare hum department or name call karenge to confuse ho jaega browser ki kaha se input le
+       //agar ek hi function dono parent or child me hai to super use karo parent wale ke lie or this use karo child wale ke lie
+       class pp{
+        #name="";
+        constructor(n){
+            this.#name=n;
+        }
+         nam() {   
+            console.log(this.#name);
+            
+        }
+       }
+       //# use karne se vo cheez private ban jaati hai or hum sirf usi class ke andar call hoga naki uske bahar.
+       //magar name() function bahar call ho sakta hai.
+       let pp1=new pp("POpat");
+            pp1.nam();
+            //Mixing
+            let usefulmethod={
+                saypp()
+                {
+
+                    console.log("pp");
+                },
+                saygg()
+                {
+                    console.log("gg");
+                }
+                
+            };//object hai ye
+            class user{
+                constructor(n)
+                {
+                    this.name=n;
+                }
+            }
+            let user1=new user();
+            Object.assign(user.prototype,usefulmethod);
+            user1.saygg();
+            //extend se sirf ek hi ki hi property ko le sakte hai magar object.assign se jyada le sake
+            //ArrowFunction.
+            let sum=(a,b)=>{
+                return a+b;
+            }
+            let p=sum(2,5);
+            console.log(p);
+let randomA=()=>Math.floor(Math.random()*20);
+console.log(randomA());
+//callback function
+  function sayHello()
+  {
+    console.log("HLJLJ>>");
+  }
+  function sayHi()
+  {
+    console.log("Hlajflk");
+  }
+  function total(a,b,callback)
+  {
+    console.log(a+b);
+    callback();
+  }
+  total(2,3,sayHello);
+  total(3,4,sayHi);//har call me do alag alag function ko pass kara sakte hai.
+  total(2,4,function(){
+    console.log("Hi");
+  })
+  //Map
+  let arr=[1,2,3,4,5,6];
+  let arr1=arr.map((val)=>val*3);
+  console.log(arr1);
+  
+
+    </script>
+
+</body>
+</html>

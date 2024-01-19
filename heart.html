@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heart"></div>
+    <h1 id="g">5 fjalkfj      fasdfjlajfj
+        fjaslfj
+    </h1>
+    <h2 id="j">Hello Moto</h2>
+    <style>
+        #g::before{
+                content: 'Gear  ';
+               
+            
+        }
+        h1{
+            white-space:pre;
+            text-indent: 30px;
+                letter-spacing: normal;
+                word-break: break-all;
+                text-transform: uppercase;
+        }
+        #j{
+       text-transform: uppercase;
+            color: red;
+             text-align: center;
+             text-indent: 50px;
+             letter-spacing: 30px;
+             word-break: break-all;
+        }
+        .heart{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            margin: 100px;
+            position: relative;
+            transform: rotate(45deg);
+        
+        }
+        
+        .heart::before,
+          .heart::after{
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color:red;
+            
+            border-radius: 50%;
+            
+        }
+        .heart::after{
+            top: -50px;
+        }
+        .heart::before{
+           left: -50px;
+        }
+    </style>
+</body>
+</html>

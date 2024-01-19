@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>spread</h1>
+    <script>
+        function call(...all){
+            console.log(all);
+        }
+        call(1,2,3,4);
+        call();
+        //reference and primitive type.
+        //primitive me to copy hota hai data ex-let a=10 and b=a to b me a ka data copy ho gya hai.
+        //reference type me data point hota hai ex:
+        let person={
+            name:"Ajit"
+        }
+        let person2=person;
+        
+        console.log(person)
+        console.log(person2)
+        //ab agar me person2.name change karunga to person me bhi affect hoga 
+        person2.name="Ayush";
+        console.log(person);
+        console.log(person2);
+        //to ab referece type ka agar copy banana hai to spread operator se karo.
+        let person3={
+            ...person
+        }
+        console.log(person3)
+        //ab agar me person3 me changes karunga to person me changes na affect honge
+        person3.name="Shyam"
+        console.log(person);
+        console.log(person3)
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="slider">
+        <div class="slider-track">
+            <div class="slide">
+                <img src="" alt="" id="one">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="two">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="three">
+            </div>
+            <div  class="slide">
+                <img src="" alt="" id="four">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="five">
+            </div>    
+            <div class="slide">
+                <img src="" alt="" id="six">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="seven">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="eight">
+            </div>
+            <div  class="slide">
+                <img src="" alt="" id="nine">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="ten">
+            </div>   
+            <div class="slide">
+                <img src="" alt="" id="11">
+            </div>
+            <div  class="slide">
+                <img src="" alt="" id="12">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="13">
+            </div>    
+            <div class="slide">
+                <img src="" alt="" id="14">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="15">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="16">
+            </div>
+            <div  class="slide">
+                <img src="" alt="" id="17">
+            </div>
+            <div class="slide">
+                <img src="" alt="" id="18">
+            </div>   
+        </div>
+     </div>
+    <script>
+        let img1=document.getElementById("one");
+        let img2=document.getElementById("two");
+        let img3=document.getElementById("three");
+        let img4=document.getElementById("four");
+        let img5=document.getElementById("five");
+        let img6=document.getElementById("six");
+        let img7=document.getElementById("seven");
+        let img8=document.getElementById("eight");
+        let img9=document.getElementById("nine");
+        let img10=document.getElementById("ten");
+        let img11=document.getElementById("11");
+        let img12=document.getElementById("12");
+        let img13=document.getElementById("13");
+        let img14=document.getElementById("14");
+        let img15=document.getElementById("15");
+        let img16=document.getElementById("16");
+        let img17=document.getElementById("17");
+        let img18=document.getElementById("18");
+        let url="https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=94b8676698474676a195b12925dc8da8";
+        fetch(url).then((response) => {
+        return response.json();
+    }).then((data) => {
+       arr=[`${data.articles[8].urlToImage}`,`${data.articles[1].urlToImage}`,`${data.articles[2].urlToImage}`,`${data.articles[6].urlToImage}`,`${data.articles[4].urlToImage}`];
+       img1.setAttribute('src',arr[0]);
+       img2.setAttribute('src',arr[1]);
+       img3.setAttribute('src',arr[2]);
+       img4.setAttribute('src',arr[3]);
+       img5.setAttribute('src',arr[4]);
+       img6.setAttribute('src',arr[0]);
+       img7.setAttribute('src',arr[1]);
+       img8.setAttribute('src',arr[2]);
+       img9.setAttribute('src',arr[3]);
+       img10.setAttribute('src',arr[4]);
+       img11.setAttribute('src',arr[2]);
+       img12.setAttribute('src',arr[3]);
+       img13.setAttribute('src',arr[4]);
+       img14.setAttribute('src',arr[0]);
+       img15.setAttribute('src',arr[1]);
+       img16.setAttribute('src',arr[2]);
+       img17.setAttribute('src',arr[3]);
+       img18.setAttribute('src',arr[4]);
+    }
+    )
+ 
+  
+   
+    </script>
+    <style>
+     .body
+     {
+          min-height: 100vh;
+          display: grid;
+          place-items: center;
+     }
+     .slider{
+          height: 250px; ;
+          margin:auto ;
+          position:relative;
+          width:90% ;
+          display:grid;
+          place-items: center;
+          overflow: hidden;
+     }
+     .slider-track{
+        display: flex;
+        width: calc(250px * 18);
+        animation: scroll 20s linear infinite;
+           
+     }
+     .slide{
+        height: 200px;
+        width: 250px;
+        display:flex ;
+        align-items: center;
+        padding: 15px;
+        perspective: 100px;
+     }
+     img{
+        width: 100%;
+     }
+     .slider::before,
+     .slider::after{
+        background-color:linear-gradient(to right,rgba(255,255,255,1) 0%, rgba(255,255, 255, 0) 100%);
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 15%;
+        z-index:2;
+     }
+     .slider::before{
+        left: 0;
+        top: 0;
+     }
+     .slider::after{
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+     }
+     .slider-track:hover{
+            animation-play-state: paused;
+     }
+     img:hover{
+        transform: translateZ(20px);
+
+     }
+     @keyframes scroll {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translateX(calc(-250px * 9));
+        }
+        
+     }
+
+    </style>
+</body>
+</html>

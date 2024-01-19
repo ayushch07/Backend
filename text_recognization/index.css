@@ -1,0 +1,42 @@
+.text {
+    background-color:rgb(185, 84, 47);
+  margin: 0;
+  width: 50%;
+ 
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   text-align: center;
+  
+
+  transform: translate(-50%, -50%);
+}
+::placeholder{
+    color: rebeccapurple;
+    font-size: 20px;
+}
+
+button{
+
+      margin-top:10% ;
+}
+#txt{
+
+    border: 0;
+  outline: 0;
+  border-radius: 10px;
+  resize: none;
+    background-color: rgb(185,84,47);
+     color:yellow;
+     width: 90%;
+     text-decoration: none;
+}
+select{
+
+    padding: 0 20px;
+    flex:1;
+    width: 150px;
+
+    border: 0;
+}

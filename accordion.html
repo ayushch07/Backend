@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>FAQ</h1>
+    <div class="container">
+      <div class="accordion-item">
+        <div class="heading">About HTML</div>
+        <div class="body-of-content">
+          <div class="content">
+            What is a HTML simple definition? Introduction to HTML HTML stands
+            for Hyper Text Markup Language. HTML is the standard markup language
+            for creating Web pages. HTML describes the structure of a Web page.
+            HTML consists of a series of elements. HTML elements tell the
+            browser how to display the content.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="heading">About css</div>
+        <div class="body-of-content">
+          <div class="content">
+            Cascading Style Sheets (CSS) is a stylesheet language used to
+            describe the presentation of a document written in HTML or XML
+            (including XML dialects such as SVG, MathML or XHTML). CSS describes
+            how elements should be rendered on screen, on paper, in speech, or
+            on other media. CSS is among the core languages of the open web and
+            is standardized across Web browsers according to W3C specifications.
+            Previously, the development of various parts of CSS specification
+            was done synchronously, which allowed the versioning of the latest
+            recommendations. You might have heard about CSS1, CSS2.1, or even
+            CSS3. There will never be a CSS3 or a CSS4; rather, everything is
+            now CSS without a version number.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="heading">About JS</div>
+        <div class="body-of-content">
+          <div class="content">
+            JavaScript (JS) is a lightweight interpreted (or just-in-time
+            compiled) programming language with first-class functions. While it
+            is most well-known as the scripting language for Web pages, many
+            non-browser environments also use it, such as Node.js, Apache
+            CouchDB and Adobe Acrobat. JavaScript is a prototype-based,
+            multi-paradigm, single-threaded, dynamic language, supporting
+            object-oriented, imperative, and declarative (e.g. functional
+            programming) styles. JavaScript's dynamic capabilities include
+            runtime object construction, variable parameter lists, function
+            variables, dynamic script creation (via eval), object introspection
+            (via for...in and Object utilities), and source-code recovery
+            (JavaScript functions store their source text and can be retrieved
+            through toString()). This section is dedicated to the JavaScript
+            language itself, and not the parts that are specific to Web pages or
+            other host environments. For information about APIs that are
+            specific to Web pages, please see Web APIs and DOM. The standards
+            for JavaScript are the ECMAScript Language Specification (ECMA-262)
+            and the ECMAScript Internationalization API specification
+            (ECMA-402). As soon as one browser implements a feature, we try to
+            document it. This means that cases where some proposals for new
+            ECMAScript features have already been implemented in browsers,
+            documentation and examples in MDN articles may use some of those new
+            features. Most of the time, this happens between the stages 3 and 4,
+            and is usually before the spec is officially published. Do not
+            confuse JavaScript with the Java programming language — JavaScript
+            is not "Interpreted Java". Both "Java" and "JavaScript" are
+            trademarks or registered trademarks of Oracle in the U.S. and other
+            countries. However, the two programming languages have very
+            different syntax, semantics, and use. JavaScript documentation of
+            core language features (pure ECMAScript, for the most part) includes
+            the following: The JavaScript guide The JavaScript reference For
+            more information about JavaScript specifications and related
+            technologies, see JavaScript technologies overview.
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      body {
+        background-color: pink;
+      }
+      h1 {
+        text-align: center;
+        color: gray;
+        letter-spacing: 15px;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      }
+      .container {
+        margin-top: 10%;
+      }
+      .accordion-item {
+        background-color: white;
+        color: black;
+        margin: 2rem auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.85);
+      }
+      .heading {
+        position: relative;
+        align-items: center;
+        font-weight: bold;
+        display: flex;
+        padding: 0.5rem 3rem 0.5rem 1rem;
+        min-height: 3.5rem;
+        line-height: 1.25rem;
+        align-items: center;
+        cursor: pointer;
+      }
+      .content {
+        letter-spacing: 1px;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+      .body-of-content {
+       overflow: hidden;
+       max-height:0;
+       
+        transition: max-height 0.3s ease-out;
+      }
+      .heading::after {
+        content: "+";
+        position: absolute;
+        right: 1rem;
+        color: black;
+        font-size: 25px;
+      }
+      .content {
+        border-top: 2px solid;
+        border-image: linear-gradient(to right, green, blue) 1;
+        padding: 1rem;
+        line-height: 1.5rem;
+      }
+      .heading.active::after {
+        content: "-";
+      }
+      @media (max-height: 767px) {
+        html {
+          font-size: 14px;
+        }
+      }
+    </style>
+    <script>
+      let p = document.querySelectorAll(".heading");
+      p.forEach((element) => {
+        element.addEventListener("click", (event) => {
+          element.classList.toggle("active");
+          const ns = element.nextElementSibling;
+          if (element.classList.contains("active")) {
+            ns.style.maxHeight = ns.scrollHeight + "px";
+          } else {
+            ns.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>prototype</h1>
+    <script>
+        let prt={};
+        console.log(prt);
+        console.log(prt.hasOwnProperty('name'));
+        function person(n)
+        {
+            this.name=n;
+        }
+        let p=new person("Ayush");
+        console.log(p);
+        function pp(name,age)
+        {
+            this.name=name;
+            this.age=age;
+          
+        }
+        let ff=new pp("Popat", 56);
+        
+        let f=new pp("Komal", 50);
+        console.log(f);
+       // console.log(ff.call());//ab jo ye call function hai vo person property ke andar hai or copy ho rha hai vaha se naki attach ho rha hai person prototype se to isko person prototype se attach karne ke lie ise hum alag se likhenge.
+        pp.prototype.call=function()
+            {
+                  console.log(`${this.name} ${this.age}`);
+            }//ab prototype se connect ho gya hai.
+            console.log(f);
+            console.log(ff.call());//prototype me vo methods rakhte hai jo sab code ke lie same kaam kare.
+            function creature(n)
+            {
+                this.lifspan=n;
+            }
+            creature.prototype.breat=function(){
+                console.log("Breathing");
+            };
+            let creat=new creature(201);
+            console.log(creat);
+            pp.prototype.__proto__=Object.create(creature.prototype);
+            console.log(ff.creat());//iskme kuch gadbad hai 91 video.
+    </script>
+</body>
+</html>

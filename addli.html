@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul id="pp">
+        <li>Hello</li>
+    </ul>
+<script>
+     let p=document.getElementById("pp");
+     var n = document.createElement('li');
+n.appendChild(document.createTextNode('World'));
+ 
+ p.appendChild(n);
+ $('#pp').append(`<li>${2+8} </li>`);
+</script>
+</body>
+</html>

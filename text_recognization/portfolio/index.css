@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+body{
+    background-color:rgba(12, 12, 127, 0.593)
+    
+     
+
+}
+#nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: bisque;
+    margin-top: 5px;
+}
+#nav ul{
+    display: flex;
+    justify-content: center;
+    color:black;
+}
+#left{
+    font-size: 2rem;
+}
+ul li{
+    list-style-type:none;
+    margin: 0 23px;
+    font-size: 1.5rem;
+}
+
+ul li:hover{
+   cursor: pointer  ;
+}
+ul li a{
+    text-decoration: none;
+    
+    color:rgb(82, 11, 11);
+}
+ul li a:hover{
+    color: rgb(4, 44, 60);
+    font-size: 1.57rem;
+}
+
+  .main-section{
+    display: flex;
+    justify-content: space-around;
+margin: 50px auto;
+
+  }
+  hr.new1{
+    border: 1px solid rgb(211, 170, 211);
+  
+     
+  }
+  h1{
+    
+  
+    color: rgb(226, 135, 70);
+    font-size: 1.9rem;
+  }
+  .second-section{
+    width: 80vw;
+    height: 80vh;
+    margin: 12px auto;
+  }
+  .second-section .box{
+    background: white;
+    width:80vw;
+    height:2px;
+   margin: 56px 0;
+    display: flex;
+  }
+  .second-section .vertical{
+    height: 93px;
+    width: 1px;
+    background-color:white ;
+    margin:0 120px;
+  }
+  .main-section div{
+    width: 40%;
+    
+   
+  }
+  .left-section{
+    width:80px;
+    margin-top:34px;
+    font-size:3rem;
+   
+  }
+  .right-section img{
+    width: 80%;
+ 
+    
+  }
+  p{
+    color: aquamarine;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  .print{
+    color: burlywood;
+    font: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+  
+  }
+  .img-top{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -30px;
+    left: -8px;
+  }
+  .vertical-title{
+    position: relative;
+    top: 75px;
+    width: 150px;
+  }
+  .vertical-desc{
+    position: relative;
+    top: 86px;
+    color: rgb(241, 142, 142);
+    font-size: 9px;
+    width: 150px;
+  }
+footer{
+    background-color: #0e0e1a;
+   
+}
+.footer{
+    display: flex;
+    padding: 70px 70px;
+    justify-content: space-evenly;
+}
+#pp{
+    color: aqua;
+}
+.second ul{
+    color: white;
+}
+
+.third ul{
+    color: white;
+}
+
+button{
+   padding:12px;
+   background:#1e2167;
+   color:white;
+   border:2px solid white ;
+   font-size:20px ;
+   cursor: pointer;
+   font-style: italic;
+}
+
+
+
+ 

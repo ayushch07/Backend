@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Notes</h1>
+    <h2>Welcome to Notes</h2>
+    <hr>
+    <h3>Add note</h4>
+    <textarea name="" id="txt" cols="50" rows="10"></textarea>
+    <br>
+    <button alt="Add Note">
+        <i>A</i>
+        <i>d</i>
+        <i>d</i>
+        <i>&nbsp;</i>
+        <i>N</i>
+        <i>O</i>
+        <i>T</i>
+        <i>E</i>
+      
+      </button>
+    <h3>Your Notes</h4>
+    <hr>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        h1{
+            text-align: center  ;
+            color: rgb(29, 2, 19);
+        }
+        #txt{
+            border: 0;
+  outline: 0;
+  border-radius: 10px;
+    background-color: rgb(187, 172, 185);
+     color:rgb(1, 21, 13);
+     width: 90%;
+     text-decoration: none;
+        }
+        hr{
+            border: 2px solid;
+            border-image: linear-gradient(to right,green,blue,red)1;
+        }
+        .bx{
+                border: 2px solid;
+                width: 180px;
+                height: 180px;
+                display: inline-block;
+                margin-left: 12px;
+                margin-bottom: 12px;
+                border-image: linear-gradient(to right,green,blue,red)1;
+               
+        }
+        .b{
+                display: block;
+                color: red;
+                border-radius: 12px;
+                margin-top: 25px;
+        }
+        button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 25px;
+ position: relative;
+ padding: 0 20px;
+ font-size: 10px;
+ text-transform: uppercase;
+ border: 0;
+ box-shadow: hsl(210deg 87% 36%) 0px 7px 0px 0px;
+ background-color: hsl(210deg 100% 44%);
+ border-radius: 12px;
+ overflow: hidden;
+ transition: 31ms cubic-bezier(.5, .7, .4, 1);
+}
+
+button:before {
+ content: attr(alt);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: absolute;
+ inset: 0;
+ font-size: 15px;
+ font-weight: bold;
+ color: white;
+ letter-spacing: 4px;
+ opacity: 1;
+}
+
+button:active {
+ box-shadow: none;
+ transform: translateY(7px);
+ transition: 35ms cubic-bezier(.5, .7, .4, 1);
+}
+
+button:hover:before {
+ transition: all .0s;
+ transform: translateY(100%);
+ opacity: 0;
+}
+
+button i {
+ color: white;
+ font-size: 15px;
+ font-weight: bold;
+ letter-spacing: 4px;
+ font-style: normal;
+ transition: all 2s ease;
+ transform: translateY(-20px);
+ opacity: 0;
+}
+
+button:hover i {
+ transition: all .2s ease;
+ transform: translateY(0px);
+ opacity: 1;
+}
+
+button:hover i:nth-child(1) {
+ transition-delay: 0.045s;
+}
+
+button:hover i:nth-child(2) {
+ transition-delay: calc(0.045s * 3);
+}
+
+button:hover i:nth-child(3) {
+ transition-delay: calc(0.045s * 4);
+}
+
+button:hover i:nth-child(4) {
+ transition-delay: calc(0.045s * 5);
+}
+
+button:hover i:nth-child(6) {
+ transition-delay: calc(0.045s * 6);
+}
+
+button:hover i:nth-child(7) {
+ transition-delay: calc(0.045s * 7);
+}
+
+button:hover i:nth-child(8) {
+ transition-delay: calc(0.045s * 8);
+}
+
+button:hover i:nth-child(9) {
+ transition-delay: calc(0.045s * 9);
+}
+
+button:hover i:nth-child(10) {
+ transition-delay: calc(0.045s * 10);
+}
+    </style>
+    <script>
+         let c=0;
+         let t=document.getElementById("txt");
+         let btn=document.querySelector("button");
+       
+         btn.addEventListener("click",()=>{
+           
+            const box = document.createElement("div");
+    box.id = `box-${c}`;
+    box.classList = "bx";
+          document.body.appendChild(box);
+          box.innerText=t.value;  
+          const button = document.createElement('button');
+button.innerText = 'Delete Note';
+button.id = `button-${c}`;
+button.classList = "b";
+box.appendChild(button);  
+     t.value="";
+     let bt=document.getElementById(`button-${c}`);
+     let val=c;
+      bt.addEventListener("click",()=>{
+      
+        let element = document.getElementById(`box-${val}`);
+             //console.log(element);
+             element.remove();
+      })
+    c++;
+         
+         }) 
+   
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./ayush.jpg" alt="" id="profile">
+        <h2 id="name">Ayush</h2>
+        <h4 id="occup">Student</h4>
+        <p>
+            Ayush studies in GLA university Mathura and his friends are good and some are fatty like aditya kuntal and some have problem with their tongue.
+        </p>
+        <button id="left"><img src="./left.jpeg" alt="" class="l"></button>
+
+        <button id="right"><img src="./right.jpeg" alt="" class="l"></button>
+        <br>
+        <button id="random">Review</button>
+
+    </div>
+    <style>
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: palegoldenrod;
+        }
+        #left,#right{
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+        }
+        p{
+            letter-spacing: 2px;
+        }
+        .l{
+                 width: 30px;
+        }
+        #profile{
+            border: 1px solid salmon;
+              border-radius: 75%;
+              width:90px;
+              max-height:75px;
+        }
+   
+        .container{
+            background-color: wheat;
+            box-shadow: 5px 8px 5px 8px #c15151;
+              height: 300px;
+            border: 2px solid black;
+            text-align: center;
+             margin-top: 180px;
+            width: 52%;
+
+        
+        }
+    </style>
+    <script>
+       let arr=[
+        {
+            name:"Aman",
+            occupation:"Engineer",
+            para:" Aman studies in GLA university Mathura and his friends are good and some are fatty like aditya kuntal and some have problem with their tongue.",
+            img:"./drizzle.jpeg"
+
+        },
+        {
+            name:"Ayush",
+            occupation:"Student",
+            para:" Ayush studies in GLA university Mathura and his friends are good and some are fatty like aditya kuntal and some have problem with their tongue.",
+            img:"././ayush.jpg"
+
+        },
+        
+        {
+
+            name:"Mohit",
+            occupation:"Fauzi",
+            para:" Mohit studies in GLA university Mathura and his friends are good and some are fatty like aditya kuntal and some have problem with their tongue.",
+            img:"./rain.jpeg"
+        },{
+            name:"Sharma",
+            occupation:"Momos",
+            para:" Tinku studies in GLA university Mathura and his friends are good and some are fatty like aditya kuntal and some have problem with their tongue.",
+            img:"./haze.jpeg"
+        },{
+            name:"Devesh",
+            occupation:"Invester",
+            para:"Devesh studies in GLA university Mathura and his friends are good and some are fatty like aditya kuntal and some have problem with their tongue.",
+            img:"./sunny.jpg"
+            
+        }
+       ];
+       let name=document.getElementById("name");
+       let occ=document.getElementById("occup");
+       let para=document.querySelector("p");
+       let btnl=document.getElementById("left");
+       let btnr=document.getElementById("right");
+       let image=document.getElementById("profile");
+       let random=document.getElementById("random");
+       let p=1;
+       btnl.addEventListener("click",()=>{
+           p--;
+           if(p<0){
+            p=arr.length-1;
+           }
+           name.innerText=arr[p].name;
+           occ.innerText=arr[p].occupation;
+           para.innerText=arr[p].para;
+           image.setAttribute('src',arr[p].img);
+        
+
+       })
+       btnr.addEventListener("click",()=>{
+           p++;
+           if(p>arr.length-1){
+            p=0;
+           }
+           name.innerText=arr[p].name;
+           occ.innerText=arr[p].occupation;
+           para.innerText=arr[p].para;
+           image.setAttribute('src',arr[p].img);
+           
+        
+
+       })
+
+       random.addEventListener('click', function () {
+        console.log("cl");
+    let num = Math.floor((Math.random())*(arr.length-1));
+
+    image.setAttribute('src',arr[num].img);
+    name.innerText=arr[num].name;
+           occ.innerText=arr[num].occupation;
+           para.innerText=arr[num].para;
+})
+      
+    </script>
+</body>
+</html>

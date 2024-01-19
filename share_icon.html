@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/22634a14c6.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="toggle">
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+        <li style="--i:0;--clr:#1877f2">
+        <a>
+            <i class="fa-brands fa-facebook"></i>
+        
+
+        </a>
+    </li>
+        <li style="--i:0;--clr:#1877f2">
+            <a>
+                <i class="fa-brands fa-instagram"></i>
+            
+    
+            </a>
+        </li>
+    </div>
+    <style>
+        .menu{
+            position: relative;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu .toggle{
+            position: relative;
+            height: 60px;
+            width: 60px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: 1.25sec;
+            z-index: 5;
+        }
+        .menu.active .toggle{
+            transform: rotate(360deg);
+            box-shadow: 0 0 0 2px #333;
+        }
+    </style>
+
+</body>
+</html>

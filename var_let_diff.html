@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Robo</h1>
+    <form action="">
+        <input type="radio" id="html" name="fav_language">
+          <label for="html">HTML</label><br>
+          <input type="radio" id="css" name="fav_language" value="CSS">
+          <label for="css">CSS</label><br>
+          <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+          <label for="javascript">JavaScript</label>
+        
+    </form>
+    <script>
+        var c=1;
+        console.log(window.c);//ye window object ki properties ko dikhata hai.
+        let count=1;
+        console.log(window.count);//ye window object ki properties ko nhi dikhata hai.
+        //var se hum ek hi object ko do bar declare kar sakte hai magar let se nhi kar sakte
+        //ex=var c=1;
+        // var c;
+        // let c=1;
+        // let c ye error dega
+        function call(msg="hi")
+        {
+            console.log(msg);
+        }
+        call("helo");//kuch na kare to hi paass hoga or agar hi na likha ho msg me to undefined aaega.
+        function pp(...args)
+        {
+            let sum=0;
+            for(let p of args)
+            {
+                sum+=p;
+            }
+            return sum;
+        }
+        let h=pp(2,3,4,5,6);
+        console.log(h);
+        let a1=[1,2,3];
+        let a2=[...a1,4,5,6];
+        console.log(a2);
+        let arr=["ayush",18,"gla"];
+        let[name,age,clg,p]=arr;
+        console.log(name+" "+clg+" "+p);
+        //object destructuring
+        let book={
+            np:"Ayush",
+            ap:20,
+            cp:"GLA",
+            publication:{
+                pub_name:"JAVASCRIPT",
+                year:2023
+            }
+
+        };
+        let{np,ap,cp,publication:{pub_name,year}}=book;
+        console.log(year);
+        
+        console.log(book.publication.year);
+
+
+    </script>
+</body>
+</html>

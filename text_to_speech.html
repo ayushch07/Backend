@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text">
+        <h1>Text to speech</h1>
+        <textarea name="" id="txt" cols="20" rows="10" placeholder="type here..."></textarea>
+        <br>
+        <select name="" id=""></select>
+        <button>Speak</button>
+        <button>Stop</button>
+    </div>
+    <style>
+
+.text {
+    background-color:rgb(185, 84, 47);
+  margin: 0;
+  width: 50%;
+ 
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+   text-align: center;
+  
+
+  transform: translate(-50%, -50%);
+}
+::placeholder{
+    color: rebeccapurple;
+    font-size: 20px;
+}
+
+button{
+
+      margin-top:10% ;
+}
+#txt{
+
+    border: 0;
+  outline: 0;
+  border-radius: 10px;
+  resize: none;
+    background-color: rgb(185,84,47);
+     color:yellow;
+     width: 90%;
+     text-decoration: none;
+}
+select{
+
+    padding: 0 20px;
+    flex:1;
+    width: 150px;
+
+    border: 0;
+}
+
+    </style>
+    <script>
+let speech=new SpeechSynthesisUtterance();
+ document.querySelector("button").addEventListener("click", ()=>{
+        speech.text=document.querySelector("textarea").value;
+        window.speechSynthesis.speak(speech);
+ }); 
+ let voices=[];
+ let voiceselect=document.querySelector("select");
+ window.speechSynthesis.onvoiceschanged=()=>{
+      voices=window.speechSynthesis.getVoices();
+      speech.voice=voices[0];
+      voices.forEach((voice,i)=>(voiceselect.options[i]=new Option(voice.name,i)));
+ };
+ voiceselect.addEventListener("click",()=>{
+      speech.voice=voices[voiceselect.value];
+ })
+
+
+
+    </script>
+</body>
+</html>

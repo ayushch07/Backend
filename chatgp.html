@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append List Items</title>
+</head>
+<body>
+
+    <ul id="myList">
+        <!-- Existing list items go here -->
+    </ul>
+
+    <script>
+        // Get the reference to the ul element
+        var myList = document.getElementById('myList');
+
+        // Create a new list item
+        var newItem = document.createElement('li');
+        var newItem1 = document.createElement('li');
+        
+        // Set the text content of the new item
+        newItem.textContent = 'New Item';
+         newItem1.textContent='two';
+        // Append the new item to the list
+        myList.appendChild(newItem);
+        myList.appendChild(newItem1)
+    </script>
+
+</body>
+</html>

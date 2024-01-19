@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Filter</h1>
+    <script>
+        let arr=[1,2,3,4,5,6,7,67,8,10,5,68,11,12,1,31];
+        let a1=arr.filter(val => val>10);
+        console.log(a1);
+        let team=[
+            {
+                name:"Ayush",
+                age:21
+            },
+            {
+                name:"Yash",
+                age:20
+            },
+            {
+                name:"Dhruv",
+                age:20
+            },
+            {
+                name:"Jay",
+                age:25
+            },
+        ];
+        let t=team.filter(val => val.age>=21);
+        for(let i of t)
+          console.log(i);
+          //cookies
+          document.cookie="item=milk";
+          let x=document.cookie;
+          console.log(x);//cookie ko delete karne ke lie expiry date past ki dedo
+          //local storage
+          localStorage.setItem('popat','lal');//remove ke lie .removeItem()
+          //JSON is used to transfer or fetch data from api or fileconfing and earlier xml is used instead of json.
+          //Data is written like object form in json
+         let date=`
+                 {
+                    "name":"Ajit",
+                    "age":31,
+                    "address":{
+                        "city":"Delhi",
+                        "state":"New Delhi"
+                    }
+                 }`
+                 let doject=JSON.parse(date);
+                 console.log(doject);
+                 console.log(doject['address']['state'])
+                 //json data me conver kare object ko
+                 let student={
+                    name:"Haathi",
+                    weigth:150,
+                    city:"Mumbai"
+                 }
+                 let dr=JSON.stringify(student);
+                 console.log(dr);
+    </script>
+</body>
+</html>

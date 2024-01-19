@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+
+<h2>Star Rating</h2>
+<div class="container">
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span> 
+<br>
+<span class="h">This is poor</span>
+<span class="h">This is bad</span>
+<span class="h">This is good</span>
+<span class="h">This is good</span>
+
+<span class="h">This is Excellent</span>
+</div>
+
+
+
+
+</body>
+<style>
+    h2{
+        text-align: center;
+    }
+    .container{
+        text-align: center;
+        border: 2px solid black;
+    }
+       .fa{
+        font-size: 45px;
+       
+
+       }
+
+       .h{
+        display: none;
+       }
+       .active{
+           color: aqua;
+           transform: rotate(48deg);
+        transition: transform 0.2s ease-in;
+           margin: 12px;
+       }
+
+    </style>
+    <script>
+        let span=document.querySelectorAll(".fa");
+        let h=document.querySelectorAll(".h");
+        console.log(h);
+        let c=0,d=-1;
+        span.forEach(function(item,index){
+               item.addEventListener("click",() => {
+                     if(c==index || (d+index==span.length-1))
+                       { item.classList.toggle("active");
+                        
+                          h[index].style.display="block";
+                         h.forEach(function(i,ip){
+                              if(ip!=index)
+                              {
+                                h[ip].style.display="none";
+                              }
+                         });
+                    c++;
+                    d++;
+                      }
+                     
+                     if(c==span.length)
+                     {
+                        d=0;
+                     }
+                     if(d==span.length){
+                        c=0;
+                        h[c].style.display="none";
+                     }
+                                  
+                 
+                    
+                
+                      
+                    
+                 
+               })
+        });
+    
+          
+    </script>
+   
+</html>

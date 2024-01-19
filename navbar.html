@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+   
+    <ul id="nav">
+        <li class="n">one</li>
+        <li class="n">two</li>
+        <li class="n">three</li>
+        <li class="n">four</li>
+    </ul>
+</div>
+<style> 
+    #nav{
+        display:flex;
+       justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+        cursor: pointer;
+        background-color:pink;
+        
+
+
+    }
+     #nav:hover .n{
+        filter: blur(5px);
+        
+     }
+     #nav:hover .n:hover{
+        filter: blur(0);
+     }
+</style>
+</body>
+</html>
